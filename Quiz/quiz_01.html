@@ -1,0 +1,23 @@
+<html>
+<head>
+    <title>quiz</title>
+</head>
+<body>
+    <script>
+
+        function solution(number){
+            let answer = "";
+    
+            
+            if(number === 0) return answer;
+            else number % 2 == 0 ? answer +="0" : answer+="1";
+
+            return solution(Math.floor(number / 2)) + answer;
+
+
+        }
+        console.log(solution(13));
+
+    </script>
+</body>
+</html>

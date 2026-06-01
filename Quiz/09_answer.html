@@ -1,0 +1,33 @@
+<html>
+<head>
+    <title>quiz</title>
+</head>
+<body>
+    <script>
+
+        function solution(need,plan){
+            let answer = "Yes";
+            let queue = need.split("")
+    
+            for(let x of plan){
+                if(queue.include(x)){
+                    if(x !== queue.shift()) return answer = "No";
+                }
+            }
+            
+
+            if(queue.length > 0){
+                return answer = "No";
+            }
+
+            return answer;
+        }
+         let a = "CBA";
+        let b = "CBDAGE"; //yes
+        //let b = "CBDGE"; //no
+        //let b = "CADBGE"; // no
+        console.log(solution(a,b));
+
+    </script>
+</body>
+</html>

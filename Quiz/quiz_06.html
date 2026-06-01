@@ -1,0 +1,56 @@
+<html>
+<head>
+    <title>quiz</title>
+</head>
+<body>
+    <script>
+
+        function solution(s){
+            let answer = 0;
+            let stack = [];
+            let temp = 0;
+
+            for(let x of s){
+                switch (x) {
+                    case "+":
+                        temp = stack.pop();
+                        temp += stack.pop();
+                        stack.push(temp);
+                        break;
+                    case "-":
+                        temp = stack.pop();
+                        temp -= stack.pop();
+                        stack.push(temp);
+                        break;        
+                    case "*":
+                        temp = stack.pop();
+                        temp *= stack.pop();
+                        stack.push(temp);
+                        break;
+                    case "/":
+                        temp = stack.pop();
+                        temp /= stack.pop();
+                        stack.push(temp);
+                        break;    
+                    default:
+                        break;
+                }
+                
+
+                stack.push((x));
+
+                answer = stack[0];
+                
+            }
+            
+            
+
+            return answer;
+        }
+        let str = "352+*9-"
+        //let str = "35-7*62/+"";
+        console.log(solution(str));
+
+    </script>
+</body>
+</html>

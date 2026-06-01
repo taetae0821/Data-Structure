@@ -1,0 +1,31 @@
+<html>
+<head>
+    <title>quiz</title>
+</head>
+<body>
+    <script>
+
+        function solution(s){
+            let answer = "";
+            let stack = [];
+            //insert Code
+            for(let x of s){
+                if(x === "("){
+                    stack.push(x);
+                }
+                if(stack.length === 0){
+                    answer += x;
+                }
+                if(x === ")"){
+                    stack.pop();
+                }
+                
+            }
+            return answer;
+        }
+        let a = "(A(BC)D)EF(G(H)(IJ)K)LN(M)";
+        console.log(solution(a));
+
+    </script>
+</body>
+</html>

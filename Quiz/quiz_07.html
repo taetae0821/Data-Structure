@@ -1,0 +1,41 @@
+<html>
+<head>
+    <title>quiz</title>
+</head>
+<body>
+    <script>
+
+        function solution(arr,num){
+            let answer = 0;
+            let stack = [];
+                
+                for(let x of num){
+                for(let j =0; j<arr.length; j++){
+                if(arr[j][x-1] !== 0){
+                    let doll = arr[j][x-1];
+                    arr[j][x-1] = 0;
+                    
+                if(stack[stack.length-1] === doll){
+                    stack.pop();
+                    answer += 2;
+                } else {
+                    stack.push(doll);
+                }
+                break;
+                }
+             }
+        }
+            return answer;
+        }
+        let board =[
+            [0,0,0,0,0],
+            [0,0,1,0,3],
+            [0,2,5,0,1],
+            [4,2,4,4,2],
+            [3,5,1,3,1]];
+        let moves = [1,5,3,5,1,2,1,4]; 
+        console.log(solution(board,moves));
+
+    </script>
+</body>
+</html>

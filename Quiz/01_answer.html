@@ -1,0 +1,26 @@
+<html>
+<head>
+    <title>answer</title>
+</head>
+<body>
+    <script>
+
+        function solution(number){
+            let answer;
+            function recursion(number){
+                if(number === 0){
+                    return;
+                }else{
+                    recursion(parseInt(n/2));
+                    // console.log(n%2);
+                    answer += n%2;
+                }
+            }
+            recursion(number)
+            return answer;
+        }
+        console.log(solution(13))
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<html>
+<head>
+    <title>quiz</title>
+</head>
+<body>
+    <script>
+
+        function solution(s){
+            let answer = "Yes";
+    
+            //insert Code
+            let arr = s.split("");
+            let stack = [];
+            
+            for(let i=0; i<arr.length; i++){
+                if(arr[i] === "("){
+                    stack.push("(");
+                }
+                if(arr[i] === ")"){
+                    if(stack.length === 0){
+                        answer = "No";
+                    }
+                    stack.pop();
+                }
+                if(i === (arr.length-1)){
+                    if(stack.length > 0){
+                        answer = "No";
+                    }
+                }
+                
+            }
+
+            return answer;
+        }
+        //let a = "(()(()))(()";
+        let a = "(()())";
+
+        console.log(solution(a));
+        //console.log(solution("))()()())"));
+
+    </script>
+</body>
+</html>
