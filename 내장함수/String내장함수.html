@@ -39,13 +39,82 @@
         // var jumin1 = "070828";
         // console.log(jumin1.substring(0,2)+"년"+jumin1.substring(2,4)+"월"+jumin1.substring(4,6)+"일");
 
-        var jumin2 = "2007-08-28";
-        var jumin2 = "07-08-28";
-        console.log(jumin2.substring(0,jumin2.indexOf("-"))+"년");
+        // var jumin2 = "2007-08-28";
+        // var jumin2 = "07-08-28";
+        // console.log(jumin2.substring(0,jumin2.indexOf("-"))+"년");
 
-        //replace
+        // //replace 대소문자 구분함
+        // var str1 = "Please visit here here here";
+        // var str2 = str1.replace("here","there");
+        // console.log(str2);
+
+        // var str1 = "Please visit here here here";
+        // var str2 = str1.replace("Here","there"); ///replaceAll는 뒤에를 다 바꿈
+        // console.log(str2)
         //정규 표현식
-        
+        // var str5 = "Please visit here here here";
+        // var str6 = str5.replace(/here/g,"there"); //g을 넣으면 replaceAll이랑 같음
+        // console.log(str6);
+
+        // var str7 = "Please visit Here HERE HeRe";
+        // var str8 = str7.replace(/here/ig,"there"); //i을 넣으면 대소문자 구분을 안함
+        // console.log(str8);
+
+        //toUpperCase() : 모든 대문자로 반환
+        var str9 = "Please visit here here here";
+        console.log(str9.toUpperCase());
+        //toLocwerCase() : 모든 소문자로 반환
+        console.log(str9.toLocaleLowerCase());
+
+        //john을 검색 : toUpperCase 또는 toLowerCase()로 통일해서 검색
+        //데이터베이스 : john,John, JOHN으로 통일
+
+        //concat() : 문자열을 결함
+        // var txt1 = "Hello";
+        // var txt2 = "world";
+        // // var txt3 = txt1 + " "+ txt2;
+        // // console.log(txt3);
+        // console.log(txt1.concat(" ",txt2));
+
+        //trim() : 문자열의 앞뒤의 공백을 제거
+        // var str10 = "                 Hello World";
+        // console.log(str10.trim());
+        // console.log(str10.trim().length);
+
+        //padStart : 특정 자릿수를 통일하기 위해 사용
+        // var str11 = "5";
+        // console.log(str11.padStart(8,0));
+
+        // var str11 = "18972";
+        // console.log(str11.padStart(8,0));
+
+        // var str13 = "3";
+        // var str13 = "03";
+        // console.log(str13.padStart(2,0));
+
+        // //padEnd
+        // var str13="15";
+        // console.log(str13.padEnd(8,0));
+
+        // //charAt : index에 해당하는 문자열 하나를 리턴
+        // var str14 = "Hello World";
+        // console.log(str14.charAt(6));
+
+        // // split : 문자열을 배열로 변환
+        // // join : 배열을 문자열로 변환
+
+        // var tags = "키보드,기계식,블루투스";
+        // var arr1 = tags.split(",");
+        // console.log(arr1);
+        // console.log(arr1.join(','));
+
+        var birthday = "2007-08-28";
+        var arr1 = birthday.split("-");
+        console.log(arr1);
+        console.log(arr1.join("."));
+        console.log(arr1.join("/"));
+
+
     </script>
 </body>
 </html>
