@@ -1,4 +1,4 @@
-import {BinaryTree} from './binary_tree.mjs';
+import {BinaryTree} from './binaryTree.mjs';
 
 let tree1 = new BinaryTree(1);
 let tree2 = new BinaryTree(2);
@@ -14,3 +14,25 @@ tree2.setLeftSubTree(tree4);
 tree2.setRightSubTree(tree5);
 tree3.setLeftSubTree(tree6);
 tree3.setRightSubTree(tree7);
+
+// console.log("루트노드의 오른쪽 자식노드"+tree1.getRightSubTree().getData());
+// console.log("루트노드의 왼쪽 자식노드"+tree1.getLeftSubTree().getData());
+// console.log("루트노드의 오른쪽 자식노드의 왼쪽 자식노드 : "+tree1.getRightSubTree().getLeftSubTree().getData());
+
+console.log("전위순회");
+tree1.PreOrderTraversal(tree1);
+console.log("\n");
+
+console.log("중위순회");
+tree1.inOrderTraversal(tree1);
+console.log("\n");
+
+console.log("후위순회");
+tree1.postOrderTraversal(tree1);
+
+console.log("\n");
+tree1.removeLeftSubTree();
+tree1.PreOrderTraversal(tree1);
+
+tree1.removeRightSubTree();
+tree1.PreOrderTraversal(tree1);
