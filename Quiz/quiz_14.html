@@ -1,0 +1,31 @@
+<html>
+<head>
+    <title>quiz</title>
+</head>
+<body>
+    <script>
+
+        function solution(n){
+            let answer= [];
+    
+            //insert Code
+            let temp = "";
+            function Traversal(v){
+               if(v > n) return;
+            temp ="";
+               Traversal(v*2);
+               Traversal(v*2+1);
+               temp+=v;
+               answer.push(temp);
+               
+               
+            }
+            Traversal(1);
+            return answer;
+        }
+        
+        console.log(solution(3));
+
+    </script>
+</body>
+</html>
