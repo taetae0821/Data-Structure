@@ -1,0 +1,48 @@
+<html>
+<head>
+    <title>quiz</title>
+</head>
+<body>
+    <script>
+
+        function solution(arr){
+            let answer = [];
+            let ch = Array.from({ length: arr.length + 1 }, () => 0);
+            // arr.sort((a,b)=>{
+            //     return b - a;
+            // });  
+
+            // for(let i = 0; i<arr.length; i++){
+            //     answer += arr[i];
+            //     if(answer > 259){
+            //         answer -= arr[i];
+            //         i++;
+            //     };
+            // }
+
+            function DFS(v){
+                if(v===arr.length) {
+                    let temp = 0;
+                    for(let i = 0; i<=arr.length; i++){
+                        if(ch[i]===1) temp += arr[i];
+                    }
+                    answer.push(temp);
+                }
+                else{
+                    ch[v]= 1;
+                    DFS(v+1)
+                    ch[v] = 0;
+                    DFS(v+1)
+                }
+
+            }
+            DFS(1);
+            
+            return Math.max(answer);
+        }
+        let arr = [81,58,42,33,61];
+        console.log(solution(arr));
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<html>
+<head>
+    <title>quiz</title>
+</head>
+<body>
+    <script>
+
+        function solution(c,arr){
+            let answer = 0;
+    
+            // function DFS(t,l,s){
+            //     if(t > c) return;
+            //     if(l===arr.length){
+            //         answer = Math.max(score);
+            //     }
+            //     else{
+            //         DFS(l+1,t+arr[l].time,s+arr[l].score);
+            //         DFS(l+1,t,s);
+            //     }
+            // }
+            // DFS(0,0,0);
+
+            function DFS(l, t, s) {
+                if (t > c) return;
+
+                if (l === arr.length) {
+                    console.log(t,s);
+                    //answer = Math.max(answer, s);
+                    return;
+                }
+
+                DFS(l + 1, t + Math.round(arr[l] / 2), s + arr[l]);
+                DFS(l + 1, t, s);
+            }
+
+            DFS(0, 0, 0);
+
+            return answer;
+        }
+        //let arr = [{time : 10, score : 5},{time : 25, score : 12},{time : 15, score : 8},{time : 6, score : 3},{time : 7, score : 4}];
+        let arr = [10,25,15,6,7];
+        console.log(solution(20,arr));
+
+    </script>
+</body>
+</html>
