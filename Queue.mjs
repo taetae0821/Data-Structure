@@ -9,7 +9,7 @@ class Queue {
     this.list.insertAt(0, data);
   }
 
-  dequeu() {
+  dequeue() {
     try {
       return this.list.deleteLast();
     } catch (e) {
