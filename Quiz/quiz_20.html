@@ -1,0 +1,32 @@
+<html>
+<head>
+    <title>quiz</title>
+</head>
+<body>
+    <script>
+        function solution(n){
+            let answer=[];
+            let idx = -1;
+            function BFS(v){
+                idx++;
+                if(v > n){
+                    return;
+                }else{
+                while(v <= n){
+                    answer.push(v*2)
+                    answer.push(v*2+1)
+                    BFS(answer[idx]);
+                }
+                }
+
+            }
+            answer.push(1);
+            BFS(1);
+            return answer;
+        }
+        
+        console.log(solution(6));
+
+    </script>
+</body>
+</html>
