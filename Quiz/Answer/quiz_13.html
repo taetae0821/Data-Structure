@@ -1,0 +1,41 @@
+<html>
+<head>
+    <title>트리 운행 방법 - 전위, 중위, 후위</title>
+</head>
+<body>
+    <script>
+        function solution(v) {
+
+            let answer = "";
+
+            function Traversal(v) {
+
+                if(v>7) return;
+
+                // preOrder
+                // console.log(v);
+                // Traversal(v*2);
+                // Traversal(v*2+1);
+
+
+                // inOrder
+                // Traversal(v*2);
+                // console.log(v);
+                // Traversal(v*2+1);
+
+                // postOrder
+                Traversal(v*2);                
+                Traversal(v*2+1);
+                console.log(v);
+
+            }
+
+            Traversal(1);
+
+            return answer;
+        }
+        console.log(solution(1))
+    </script>
+   
+</body>
+</html>

@@ -1,0 +1,37 @@
+<html>
+<head>
+    <title>stack - 후위식 계산</title>
+</head>
+<body>
+    <script>
+        function solution(s) {
+            let answer=0;
+            let stack = [];
+
+            for(let x of s) {
+                // console.log(x);
+                if(!isNaN(x)) {  // 숫자이면 push
+                    // console.log(x);
+                    stack.push(Number(x));
+                }
+                else {  // 숫자 아니면 : pop 두번, 연산 결과값을 push
+                    let rt = stack.pop();
+                    let lt = stack.pop();
+                    if(x==='+') stack.push(lt + rt);
+                    else if(x==='-') stack.push(lt - rt);
+                    if(x==='*') stack.push(lt * rt);
+                    if(x==='/') stack.push(lt / rt);
+                }
+            } //for            
+            // console.log(stack);
+            // return answer = stack[0];
+            return answer = stack.pop();
+        }
+        // let str = "352+*9-";    // 12
+        let str = "35-7*62/+"  // -11
+
+        console.log(solution(str));
+    </script>
+   
+</body>
+</html>

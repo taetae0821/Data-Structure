@@ -1,0 +1,29 @@
+<html>
+<head>
+    <title>큐 - 필수과목 설계</title>
+</head>
+<body>
+    <script>
+        function solution(need, plan) {
+            let answer="YES";
+            let queue = need.split('');
+           
+            for(let x of plan) {
+                // console.log(x);
+                if(queue.includes(x)) {
+                    // console.log(x);
+                    if(x !== queue.shift()) return answer="NO";
+                }
+            } // for
+            if(queue.length>0) return answer="NO"; 
+            return answer;
+        }
+        let a = "CBA";
+        // let b = "CBDAGE";       // YES
+        // let b = "CBDGE";        // NO
+        let b = "CADBGE";       // NO
+        console.log(solution(a,b))
+    </script>
+   
+</body>
+</html>

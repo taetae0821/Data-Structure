@@ -1,0 +1,30 @@
+<html>
+<head>
+    <title>stack - 괄호 갯수 카운팅</title>
+</head>
+<body>
+    <script>
+        function solution(s) {
+            let answer="YES";
+            let stack = [];
+           for(let x of s) {
+                // console.log(x);
+                if(x==='(') {
+                    stack.push('(');
+                }
+                else {
+                    if(stack.length===0) return "NO";
+                    stack.pop();
+                }
+           } // for
+           if(stack.length > 0) return "NO";
+        
+           return answer;
+        }
+        // let a = "(()(())))()";      // NO
+        let a = "(()())"         // YES
+        console.log(solution(a));
+    </script>
+   
+</body>
+</html>

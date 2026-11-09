@@ -1,0 +1,31 @@
+<html>
+<head>
+    <title>큐 - 공주를 구하라</title>
+</head>
+<body>
+    <script>
+        function solution(n, k) {
+            let answer=0;
+            // let queue = [];
+            // for(let i=0; i<n; i++) queue.push(i+1);
+            // console.log(queue);
+
+            let queue = Array.from({length:n}, (v,i) => i+1);
+            
+            // console.log(queue);
+            // queue.push(queue.shift());
+            // console.log(queue);
+
+            while(queue.length) {
+                for(let i=1; i<k; i++) queue.push(queue.shift());
+                queue.shift();
+
+                if(queue.length===1) answer = queue.shift();
+            }
+            return answer;
+        }
+        console.log(solution(8,3))
+    </script>
+   
+</body>
+</html>
